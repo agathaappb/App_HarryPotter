@@ -7,45 +7,69 @@
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        >
+        android:layout_height="match_parent"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
         <Button
             android:id="@+id/loading"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="241dp"
+            android:layout_height="47dp"
             android:layout_marginTop="32dp"
-            android:backgroundTint="@color/teal_700"
+            android:backgroundTint="#08103A"
             android:fontFamily="@font/mountains_of_christmas"
             android:text="Alohomora!"
             android:textSize="20sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/result_textview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="16dp"
             android:fontFamily="@font/antic"
             android:text=""
-            android:textColor="@color/purple_500"
+            android:textColor="@color/btn1"
             android:textSize="20sp"
-            app:layout_constraintTop_toBottomOf="@+id/progress"
-            />
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton"
+            tools:layout_editor_absoluteX="118dp" />
+
         <ProgressBar
             android:id="@+id/progress"
-            android:visibility="gone"
-            tools:visibility="visible"
             android:layout_width="42dp"
             android:layout_height="42dp"
             android:layout_marginTop="16dp"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/loading"
-            />
+            tools:visibility="visible" />
+
+        <ImageButton
+
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/loading"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/ic_launcher_foreground"
+            tools:ignore="VectorDrawableCompat" />
+
+        <ImageView
+            android:id="@+id/yourhouse"
+            android:layout_width="357dp"
+            android:layout_height="621dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/house_gryffindor_1" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

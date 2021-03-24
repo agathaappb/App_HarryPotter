@@ -1,15 +1,14 @@
 package com.agathaappb.harrypotter
 
-import android.annotation.SuppressLint
 import android.os.AsyncTask
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.loader.content.AsyncTaskLoader
+import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
+import java.lang.Math.random
+import java.lang.Thread.sleep
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,9 +16,18 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
+        imageButton.setOnClickListener{
+            houseHat()
+        }
+
         loading.setOnClickListener {
+            yourhouse.visibility = View.GONE
             lauchHarryTask()
         }
+
+
+
+
     }
     fun showData(list : List<Harry>){
         //result_textview.text = ""
@@ -39,6 +47,40 @@ class MainActivity : AppCompatActivity() {
     fun lauchHarryTask(){
         val task = TaskHarry()
         task.execute()
+    }
+
+    fun houseHat() {
+        val valorHouse = listOf(1, 2, 3, 4)
+        val house = valorHouse.random()
+        progress.visibility = View.VISIBLE
+
+        when(house){
+            1 -> {
+                progress.visibility = View.GONE
+                yourhouse.setImageResource(R.drawable.house_gryffindor_1)
+                yourhouse.visibility = View.VISIBLE
+
+            }
+            2 -> {
+                progress.visibility = View.GONE
+                yourhouse.setImageResource(R.drawable.house_hufflepuff_1)
+                yourhouse.visibility = View.VISIBLE
+
+            }
+            3 -> {
+                progress.visibility = View.GONE
+                yourhouse.setImageResource(R.drawable.house_ravenclaw_1)
+                yourhouse.visibility = View.VISIBLE
+
+            }
+            4 -> {
+                progress.visibility = View.GONE
+                yourhouse.setImageResource(R.drawable.house_slytherin_1)
+                yourhouse.visibility = View.VISIBLE
+
+
+            }
+        }
     }
 
 
@@ -70,3 +112,5 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
+
+
